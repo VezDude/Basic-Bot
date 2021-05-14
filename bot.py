@@ -12,5 +12,9 @@ async def on_ready():
 @client.command()
 async def hi(ctx):
     await ctx.send(f'Hi {ctx.author.mention}')
+    
+@client.command()
+async def ping(ctx):
+    await ctx.send(f'Pong ! {round(client.latency * 1000)}')
 
 client.run('YOUR_TOKEN_HERE')
