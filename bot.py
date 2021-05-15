@@ -16,6 +16,16 @@ async def hi(ctx):
     
 @client.command()
 async def ping(ctx):
-    await ctx.send(f'Pong ! {round(client.latency * 1000)}')
+    await ctx.send(f'Pong ! {round(client.latency * 100)}')
+    
+@client.command()
+async def embed(ctx):
+    embed = discord.Embed(title = "Embed", description = "This Message was sent using embed", color = 0x0062ff)
+    embed.add_field(name = "This is field 1", value = "This is field description", inline=False)
+    embed.add_field(name = "This is field 2", value = "This is field description", inline=False)
+    embed.set_footer(text = "#Code Part-1 :)")
+    await ctx.send(embed = embed)
+    
+
 
 client.run('YOUR_TOKEN_HERE')
