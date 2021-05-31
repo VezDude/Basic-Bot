@@ -126,27 +126,26 @@ async def dance(ctx):
 
 
 @client.command()
-async def kill(ctx, member: discord.Member):  # This command will be named kill and will take two arguments: ctx (which is always needed) and the user that was mentioned
-    kill_messages = [
+async def kill(ctx, member: discord.Member): 
         f'{ctx.message.author.mention} killed {member.mention} with a frying pan',
         f'{ctx.message.author.mention} killed {member.mention} with super punch on his face',
         f'{ctx.message.author.mention} killed {member.mention} with a nuclear missile',
         f'{member.mention} died from CORONA VIRUS ',
         f'{member.mention} accidently put an axe on his feet and he died',
         f'{member.mention} died from laughing :laughing:',
-    ]  # This is where you will have your kill messages. Make sure to add the mentioning of the author (ctx.message.author.mention) and the member mentioning (member.mention) to it
+    ]  
     await ctx.send(random.choice(kill_messages))
 
 
 @client.command()
-async def slap(ctx, member: discord.Member):  # This command will be named kill and will take two arguments: ctx (which is always needed) and the user that was mentioned
+async def slap(ctx, member: discord.Member): 
     slap_messages = [
         f'{ctx.message.author.mention} slapped {member.mention} 1 times. He slapped {ctx.message.author.mention} in return',
         f'{ctx.message.author.mention} slapped {member.mention} 100 times. He will take revenge...',
         f'{ctx.message.author.mention} slapped {member.mention} 1000 times. He luckily Survived.....',
         f'{ctx.message.author.mention} slapped {member.mention} ♾️ times. He luckily Survived in ventilator.....',
 
-    ]  # This is where you will have your kill messages. Make sure to add the mentioning of the author (ctx.message.author.mention) and the member mentioning (member.mention) to it
+    ]  
     await ctx.send(random.choice(slap_messages))
 
 @commands.has_permissions(kick_members=True)
@@ -191,7 +190,7 @@ async def profile_pic(ctx, member: discord.User):
     await ctx.send(embed=embed)
 
 @client.command(aliases=['make_role'])
-@commands.has_permissions(manage_roles=True) # Check if the user executing the command can manage roles
+@commands.has_permissions(manage_roles=True)
 async def create_role(ctx, *, name):
 	guild = ctx.guild
 	await guild.create_role(name=name)
